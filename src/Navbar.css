@@ -1,0 +1,137 @@
+/* Common styles for both laptop and mobile */
+nav {
+  margin-top: 1px ;
+  background-color: #222;
+  /* border: 1.5px solid #2486cc; Corrected the border syntax */
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+    /* Add hover styles */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover styles */
+li a:hover {
+  background-color:black; /* Change this to the background color you want on hover */
+  text-decoration: solid #2486cc;
+  color: #2486cc; /* Change this to the text color you want on hover */
+}
+
+/* Specific styles for mobile devices */
+@media (max-width: 768px) {
+  /* This media query targets devices with a screen width of 768px or less, which typically includes most mobile devices */
+  .home-button {
+    order: 1; /* Move home button to the left */
+  }
+
+  .mobile-dropdown {
+    order: 3; /* Move dropdown to the right */
+  }
+
+  .mobile-dropdown .dropbtn {
+    font-size: 24px; /* Increase the font size of the dropdown button */
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .mobile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    border: 1.5 solid #2486cc;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+  }
+
+  .mobile-dropdown .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .mobile-dropdown .dropdown-content a:hover {
+    background-color: #222;
+    text-decoration: solid #2486cc;
+    color: #2486cc;
+  }
+
+  .mobile-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Hide desktop menu on mobile */
+  .desktop-menu {
+    display: none;
+  }
+}
+
+/* Specific styles for laptops */
+.home-button {
+  background-color: #333;
+  /* padding: 10px 15px;
+  border-radius: 5px; */
+  border-radius: 5%;
+  padding: 1%;
+}
+
+.home-button a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  background-color: black;
+  color:#2486cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+.home-button a:hover {
+  color:#2486cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Show desktop menu on laptops */
+@media (min-width: 769px) {
+  .desktop-menu {
+    display: flex;
+  }
+
+  /* Adjust positioning of the desktop menu */
+  .desktop-menu {
+    margin-left: 20px; /* Change the value as needed to position the menu */
+  }
+
+  /* Hide the mobile dropdown button on laptops */
+  .mobile-dropdown {
+    display: none;
+  }
+}
